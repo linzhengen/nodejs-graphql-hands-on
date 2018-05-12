@@ -1,0 +1,27 @@
+version: '3'
+services:
+  api-server:
+    container_name: api-server
+    build:
+      context: .
+      dockerfile: ./docker/api-server/Dockerfile
+    volumes:
+      - .:/home/app/api-server
+      - /home/app/api-server/node_modules
+    ports:
+      - "3001:3000"
+    links:
+      - mysql57
+  mysql57:
+    container_name: mysql57
+    build:
+      context: .
+      dockerfile: ./docker/mysql57/Dockerfile
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=app
+      - MYSQL_USER=app
+      - MYSQL_PASSWORD=password
+      - TZ=Japan
+    ports:
+      - "3307:3306"

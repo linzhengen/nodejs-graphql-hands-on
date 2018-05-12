@@ -1,0 +1,18 @@
+{
+  "presets": [
+    [
+      "env"
+    ]
+  ],
+  "plugins": [
+    "babel-plugin-inline-import",
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@": "./src"
+        }
+      }
+    ]
+  ]
+}
