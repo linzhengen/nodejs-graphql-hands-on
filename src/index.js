@@ -1,8 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import graphQLSchema from '@/graphQLSchema';
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
 
-const graphQLSchema =
 const PORT = 3000;
 
 const app = express();

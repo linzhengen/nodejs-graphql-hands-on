@@ -1,18 +1,21 @@
 import {
     GraphQLObjectType,
-    GraphQLID,
+    GraphQLString,
 } from 'graphql';
 import PersonProfileInputType from "./PersonProfileInputType";
 
 const PersonProfileType = new GraphQLObjectType({
     name: 'PersonProfile',
     description: 'ユーザプロフィール',
-    args: {
-        personId: {
-            type: GraphQLID,
+    fields: {
+        name: {
+            type: GraphQLString,
         },
-        input: {
-            type: PersonProfileInputType,
+        email: {
+            type: GraphQLString,
+        },
+        password: {
+            type: GraphQLString,
         },
     },
 });

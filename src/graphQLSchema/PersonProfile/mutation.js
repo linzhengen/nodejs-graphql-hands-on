@@ -1,20 +1,18 @@
 import {
-    GraphQLString,
+    GraphQLID,
 } from 'graphql';
 import PersonProfileType from "./PersonProfileType";
+import PersonProfileInputType from "./PersonProfileInputType";
 
 const createPersonProfile = {
     type: PersonProfileType,
     description: 'ユーザープロフィール作成',
     args: {
-        name: {
-            type: GraphQLString,
+        personId: {
+            type: GraphQLID,
         },
-        email: {
-            type: GraphQLString,
-        },
-        password: {
-            type: GraphQLString,
+        input: {
+            type: PersonProfileInputType,
         },
     },
 };
