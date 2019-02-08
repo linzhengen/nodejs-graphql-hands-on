@@ -21,4 +21,4 @@ RUN npm install
 # RUN npm install --only=production
 
 ENV PATH=$PATH:$HOME/src/node_modules/.bin
-CMD ["npm", "run", "dev"]
+CMD ["yarn", "run", "dev"]
